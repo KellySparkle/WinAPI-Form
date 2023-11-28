@@ -26,6 +26,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
     wc.cbClsExtra = 0;
     wc.cbWndExtra = 0;
     if (!RegisterClass(&wc))
+        //редактирование окна
     {
         MessageBox(NULL, L"Window Registration Failed!", L"Error!", MB_OK | MB_ICONERROR);
         return 0;
@@ -44,6 +45,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE, LPSTR, int)
     GetWindowRect(hWnd, &rc);
     HRGN rgn = CreateEllipticRgn(0, 0, rc.right - rc.left, rc.bottom - rc.top);
     SetWindowRgn(hWnd, rgn, TRUE);
+    //создание круглое формы
 
     ShowWindow(hWnd, SW_SHOW);
     UpdateWindow(hWnd);
